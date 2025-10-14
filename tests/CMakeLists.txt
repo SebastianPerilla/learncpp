@@ -12,7 +12,7 @@ include(GoogleTest)
 
 add_executable(test_library test_library.cpp)
 
-target_link_libraries(test_library PRIVATE GTest::gtest_main library)
+target_link_libraries(test_library PRIVATE GTest::gtest_main io)
 
 target_include_directories(test_library PRIVATE ${CMAKE_SOURCE_DIR}/include)
 

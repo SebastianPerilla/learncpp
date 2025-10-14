@@ -1,18 +1,13 @@
 #include <iostream>
-#include "library.h"
-
+#include "io.h"
 
 int main(){
-    int a = 10;
-    int b = 5;
 
-    std::cout << "\n";
+    int x = io::readNumber();
+    int y = io::readNumber();
 
-    std::cout << "Variables: a = " << a << " , b = " << b << std::endl;
-    std::cout << "Sum Operator: a + b = " << library::add(a,b) << std::endl;
+    io::writeAnswer(x + y);
 
-    std::cout << "Modulo Operator: a %% b = " << library::modulo(a,b) << std::endl;
-    
     return 0;
 }
 

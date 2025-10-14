@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LIBRARY_H
+#define LIBRARY_H
 
 namespace library{
     /**
@@ -12,3 +13,6 @@ int add(int a, int b);
 int modulo(int a, int b);
     
 }
+
+
+#endif

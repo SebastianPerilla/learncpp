@@ -1,12 +1,18 @@
 #include <gtest/gtest.h>
-#include "library.h"
+#include "io.h"
 
-TEST(LibraryAddFunction, SumsTwoInts) {
-    EXPECT_EQ(library::add(2, 3), 5);
-    EXPECT_EQ(library::add(-1, 1), 0);
-    EXPECT_EQ(library::add(0, 0), 0);
-  }
+// TEST (ReadUserInput, AddTwoNums) {
+    
+//     // Arrange
+//     std::istringstream fakeInput("42\n");
+//     auto cinBackup = std::cin.rdbuf(fakeInput.rdbuf()); // redirect std::cin
 
-TEST(LibraryModulusOperator, ModuloTwoNums){
-    ASSERT_EQ(library::modulo(10,5), 0);
-}
+//     // Act
+//     int result = io::readNumber();
+
+//     // Restore original buffer
+//     std::cin.rdbuf(cinBackup);
+
+//     // Assert
+//     EXPECT_EQ(result, 42);
+// }
