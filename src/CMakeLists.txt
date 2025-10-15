@@ -1,9 +1,7 @@
-include_directories(${CMAKE_SOURCE_DIR}/include)
-# add_library(library SHARED library.cpp)
+# library
 add_library(io SHARED io.cpp)
+target_include_directories(io PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
+# executable
 add_executable(main main.cpp)
-
-target_link_libraries(main io)
-
-# add_executable(some_binary some_source.cpp)
+target_link_libraries(main PRIVATE io)

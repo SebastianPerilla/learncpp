@@ -2,15 +2,12 @@
     "configurations": [
         {
             "name": "Linux",
-            "includePath": [
-                "${workspaceFolder}/**"
-            ],
-            "defines": [],
-            "compilerPath": "/usr/bin/gcc",
+            "includePath": [ "${workspaceFolder}/**" ],
+            "compileCommands": "${workspaceFolder}/build/compile_commands.json",
+            "compilerPath": "/usr/bin/g++",
             "cStandard": "c23",
             "cppStandard": "gnu++17",
             "intelliSenseMode": "linux-gcc-x64"
-            // "compileCommands": "${workspaceFolder}/build/compile_commands.json"
         }
     ],
     "version": 4

@@ -1,7 +1,7 @@
 #include <iostream>
 #include "io.h"
 
-int main(){
+int main() {
 
     int x = io::readNumber();
     int y = io::readNumber();
