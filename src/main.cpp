@@ -1,23 +1,24 @@
-#include <cstddef>  // for std::size_t
 #include <iostream>
 #include <vector>
 
+int main() {
 
-int main()
-{
+    int numOfPrints = 100;
 
-    std::vector<float> x = {1e0,
-                            1e1,
-                            1e2,
-                            1e3,
-                            1e4,
-                            1e5};
-
-    for (int i = 0; i < x.size(); i++) {
-        std::cout << x[i] << '\n';
+    for (int i = 1; i < numOfPrints; i++) {
+        if (i % 3 == 0 && i % 5 == 0) {
+            std::cout << "FizzBuzz" << std::endl;
+        } 
+        else if (i % 3 == 0) {
+            std::cout << "Fizz" << std::endl;
+        } 
+        else if (i % 5 == 0) {
+            std::cout << "Buzz" << std::endl;
+        } 
+        else {
+            std::cout << i << std::endl;
+        }
     }
-
-    // std::cout << x.size() << '\n';
 
     return 0;
 }
