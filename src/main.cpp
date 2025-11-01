@@ -2,8 +2,8 @@
 #include <vector>
 #include <random>
 
-
-int randomGeny () {
+int randomGeny()
+{
     std::random_device rd;
     auto seed = rd();                             // Seed Constructor
     std::mt19937 gen(seed);                       // Mersenne Twister
@@ -13,44 +13,32 @@ int randomGeny () {
     return dis(gen);
 }
 
-/* 
-Write a function that takes a vector of 
-numbers and returns the sum of all elements
-*/
+std::vector<int> recursiveRandomFunc(int inputAmount, int randGenerator, std::vector<int> inpVector = {})
+{
 
-std::vector<int> recursiveRandomFunc(int inputAmount, int randGenerator = randomGeny(), std::vector<int> inpVector = {}) {
-
-    if (inpVector.size() != inputAmount) {
-        
+    if (inpVector.size() != inputAmount)
+    {
         std::cout << "Current size of Vector: " << inpVector.size() << std::endl;
         inpVector.push_back(randGenerator);
-        return recursiveRandomFunc(inputAmount, 
-                                   randGenerator,
+        return recursiveRandomFunc(inputAmount,
+                                   randomGeny(),
                                    inpVector);
-    } else {
+    }
+    else
+    {
         std::cout << "Achieved targeted Size: " << inpVector.size() << std::endl;
         return inpVector;
-    } 
-}
-
-int simpleRecursion(int amount, int desiredCount) {
-    
-    if (amount != desiredCount) {
-        std::cout << "Current Amount: " << amount << std::endl;
-        return simpleRecursion(amount - 1, desiredCount);
-    } else {
-        std::cout << "This is the result: " << amount << std::endl;
-        return amount;
     }
-
 }
 
-int main()  {
-
-    std::vector<int> emptyList = {};
+int main()
+{
+    // Using the Default Arguments to not fill the last argument in the Function
     auto vec = recursiveRandomFunc(10, randomGeny());
-    
-    for (auto i : vec){
+
+    std::cout << "Random Vector\n";
+    for (auto i : vec)
+    {
         std::cout << i << " ";
     }
 
