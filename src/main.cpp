@@ -20,9 +20,7 @@ std::vector<int> recursiveRandomFunc(int inputAmount, int randGenerator, std::ve
     {
         std::cout << "Current size of Vector: " << inpVector.size() << std::endl;
         inpVector.push_back(randGenerator);
-        return recursiveRandomFunc(inputAmount,
-                                   randomGeny(),
-                                   inpVector);
+        return recursiveRandomFunc(inputAmount, randomGeny(), inpVector);
     }
     else
     {
