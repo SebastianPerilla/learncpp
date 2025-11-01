@@ -1,18 +1,14 @@
 #include <gtest/gtest.h>
-#include "io.h"
+#include "library.h"
+#include <numeric>
 
-TEST (ReadUserInput, AddTwoNums) {
-    
-    // Arrange
-    std::istringstream fakeInput("42\n");
-    auto cinBackup = std::cin.rdbuf(fakeInput.rdbuf()); // redirect std::cin
+auto testVector = {5, 3, 1, 3, 1, 1, 2, 5, 3, 1};
 
-    // Act
-    int result = io::readNumber();
 
-    // Restore original buffer
-    std::cin.rdbuf(cinBackup);
+TEST (STDAccumulate, TestVector) {
+    EXPECT_EQ(std::accumulate(testVector.begin(), testVector.end(), 0), 25);
+}
 
-    // Assert
-    EXPECT_EQ(result, 42);
+TEST (OwnFunc, TestVector) {
+    EXPECT_EQ(library::produceResult(testVector), 25);
 }

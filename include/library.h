@@ -1,18 +1,9 @@
-#ifndef LIBRARY_H
-#define LIBRARY_H
+#pragma once
+#include <vector>
 
 namespace library{
-    /**
-    * @brief Add two integers
-    *
-    * @param a First integer
-    * @param b Second integer
-    * @return int Sum of a and b
-    */
-int add(int a, int b);
-int modulo(int a, int b);
-    
+
+   int randomGeny();
+   std::vector<int> recursiveRandomFunc(int inputAmount, int randomNumber, std::vector<int>);
+   int produceResult(std::vector<int>);
 }
-
-
-#endif
