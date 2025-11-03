@@ -10,7 +10,7 @@ namespace library
         std::random_device rd;
         auto seed = rd();                              // Seed Constructor
         std::mt19937 gen(seed);                        // Mersenne Twister
-        std::uniform_int_distribution<int> dis(5, 12); // Distribution
+        std::uniform_int_distribution<int> dis(1, 6); // Distribution
 
         return dis(gen);
     }
