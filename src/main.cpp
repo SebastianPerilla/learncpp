@@ -9,13 +9,8 @@ bool isAllowedToTakeFunRide(){
 }
 
 int main(){
-    if (isAllowedToTakeFunRide()){
-        std::cout << "Have Fun!" << std::endl;
-    } else {
-        std::cout << "Sorry you are too short";
-    }
+    std::cout << "Testing out Escape Sequences";
 
-    // This is how we van work with the return staments as best as possible 
-
+    std::cout << "Trying out the \', now the \", now the \\ , now the \t, \? escape sequence";
     return 0;
 }
