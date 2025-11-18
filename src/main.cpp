@@ -1,19 +1,27 @@
-#include <vector>
 #include <iostream>
-#include <algorithm>
-#include <array>
-#include <iterator>
+#include <string>
+
+std::string getName()
+{
+	std::cout << "Enter your name: ";
+	std::string name;
+	std::getline(std::cin >> std::ws, name);
+	return name;
+}
+
+int getAge()
+{
+
+	std::cout << "Enter your age: ";
+	int age;
+	std::cin >> age;
+	return age;
+}
 
 int main()
 {
-
-	std::array<int, 12> arr = {4, 1, 4, 4, 2, 3, 5, 6, 7, 8, 9, 10};
-
-	std::sort(arr.begin(), arr.end());
-
-	for (auto i : arr)
-	{
-		std::cout << i << " ";
-	}
+	getName();
+	getAge();
+	
 	return 0;
 }
