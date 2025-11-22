@@ -15,6 +15,7 @@ int main()
 	David Jenkins (age 44) is older than John Bacon (age 37).
 	*/
 
+	std::cout << "Using C Style String Literla";
 	
 	
 	return 0;
