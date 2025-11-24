@@ -1,51 +1,46 @@
 #include <iostream>
 #include <string>
+#include <string_view>
+
+std::string getName (int num) {
+	std::cout << "Enter the name of person #" << num << ": ";
+	std::string name;
+	std::getline(std::cin >> std::ws, name);
+	return name; 
+}
+
+
+int getAge (std::string_view name) {
+	std::cout << "Enter the age of " << name << ": ";
+	int age {};
+	std::cin >> age;
+	return age; 
+}
+
+void older(std::string_view name1, int age1, std::string_view name2, int age2) {
+	
+	if (age1 > age2) {
+		std::cout << name1 << " (age " << age1 << ") is older than " 
+				  << name2 << " (age " << age2 << ").";
+		
+	} else {
+		std::cout << name2 << " (age " << age2 << ") is older than " 
+				  << name2 << " (age " << age1 << ").";
+	}
+}
+
 
 int main()
 {
-	/*
-	Write a program that asks for the name and age of two people, then prints which person is older.
-
-	Here is the sample output from one run of the program:
-
-	Enter the name of person #1: John Bacon
-	Enter the age of John Bacon: 37
-	Enter the name of person #2: David Jenkins
-	Enter the age of David Jenkins: 44
-	David Jenkins (age 44) is older than John Bacon (age 37).
-	*/
-
-	std::cout << "Enter the name of person #1: ";
+	const std::string name1 { getName(1) }; 
+	const int age1 { getAge(name1) };
 	
-	std::string person1 {};
-	std::cin >> person1;
-
-	std::string_view p1 {person1};
-
-	std::cout << "Enter the age of " << person1 << ": ";
+	const std::string name2 { getName(2) }; 
+	const int age2 { getAge(name2) };
 	
-	int person1Age {};
-	std::cin >> person1Age;
+	older(name1, age1, name2, age2);	
 
 
-	std::cout << "\nEnter the name of person #2: ";
-
-	std::string person2 {};
-	std::cin  >> person2;
-
-	std::string_view p2 {person2};
-
-	std::cout << "Enter the age of " << p2 << ": ";
-
-	int person2Age {};
-	std::cin >> person2Age;
-
-	if (person1Age > person2Age) {
-		std::cout << p1 << "(age " << person1Age << ") is older than " << p2 << "(age " << person1Age << ").";
-		
-	} else {
-		std::cout << p2 << "(age " << person2Age << ") is older than " << p1 << "(age " << person2Age << ").";
-	}
 	
 	return 0;
 }
