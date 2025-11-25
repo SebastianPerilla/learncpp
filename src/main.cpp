@@ -1,46 +1,66 @@
 #include <iostream>
 #include <string>
-#include <string_view>
 
-std::string getName (int num) {
-	std::cout << "Enter the name of person #" << num << ": ";
+class Passport
+{
+private:
+	int monthsTillExpiry;
 	std::string name;
-	std::getline(std::cin >> std::ws, name);
-	return name; 
-}
+	std::string passportNumber;
 
+public:
+	Passport()
+	: monthsTillExpiry(10)
+	, name ("Sebastian Perilla")
+	, passportNumber("A1234567")
+	{}
 
-int getAge (std::string_view name) {
-	std::cout << "Enter the age of " << name << ": ";
-	int age {};
-	std::cin >> age;
-	return age; 
-}
+	void passGetter()
+	{
+		std::cout << "Months Till Expiry: " << monthsTillExpiry << "\n";
 
-void older(std::string_view name1, int age1, std::string_view name2, int age2) {
-	
-	if (age1 > age2) {
-		std::cout << name1 << " (age " << age1 << ") is older than " 
-				  << name2 << " (age " << age2 << ").";
-		
-	} else {
-		std::cout << name2 << " (age " << age2 << ") is older than " 
-				  << name2 << " (age " << age1 << ").";
+		std::string_view name1{name};
+		std::cout << "Name: " << name1 << "\n";
+
+		std::string_view passportNumber1(passportNumber);
+		std::cout << "Number: " << passportNumber1 << "\n";
 	}
-}
 
+	void passNameSetter()
+	{
+		std::cout << "New Name: ";
+		std::string nameNew{};
+		std::getline(std::cin >> std::ws, nameNew);
+		name = nameNew;
+
+		std::cout << "New Passport Number: ";
+		std::string numberNew{};
+		std::getline(std::cin >> std::ws, numberNew);
+		passportNumber = numberNew;
+	}
+};
 
 int main()
 {
-	const std::string name1 { getName(1) }; 
-	const int age1 { getAge(name1) };
-	
-	const std::string name2 { getName(2) }; 
-	const int age2 { getAge(name2) };
-	
-	older(name1, age1, name2, age2);	
+	Passport passport;
 
+	passport.passGetter();
 
-	
+	std::cout << "Do you want to Change the Passport Name and Number?(y/n): ";
+
+	std::string changePassQuestion{};
+	std::cin >> changePassQuestion;
+
+	if (changePassQuestion == "y")
+	{
+		passport.passNameSetter();
+		std::cout << "\n";
+		passport.passGetter();
+	}
+	else
+	{
+		std::cout << "All Goodie, you will be notified when the passport expiry is almost up!";
+	}
+
 	return 0;
 }
