@@ -10,10 +10,9 @@ private:
 
 public:
 	Passport()
-	: monthsTillExpiry(10)
-	, name ("Sebastian Perilla")
-	, passportNumber("A1234567")
-	{}
+		: monthsTillExpiry(10), name("Sebastian Perilla"), passportNumber("A1234567")
+	{
+	}
 
 	void passGetter()
 	{
@@ -51,7 +50,7 @@ int main()
 	std::string changePassQuestion{};
 	std::cin >> changePassQuestion;
 
-	if (changePassQuestion == "y")
+	if (changePassQuestion == "y") 
 	{
 		passport.passNameSetter();
 		std::cout << "\n";

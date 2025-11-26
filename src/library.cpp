@@ -10,9 +10,9 @@ private:
 
 public:
     Piano() 
-    : numberOfKeys(88), 
-    mechanical(true), 
-    manufacturer ("Yamaha")
+    : numberOfKeys(88)
+    , mechanical(true) 
+    , manufacturer ("Yamaha")
     {
 
         std::cout << "Constructor Called \n";
