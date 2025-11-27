@@ -1,26 +1,11 @@
 #include <iostream>
 
-constexpr bool isEven(int value)
-{
-	return value % 2 == 0;
-};
 
-int main()
-{
 
-	std::cout << "Enter an integer: ";
 
-	int value{};
-	std::cin >> value;
+int main() {
 
-	if (isEven(value) == true)
-	{
-		std::cout << value << " is even";
-	}
-	else
-	{
-		std::cout << value << " is odd";
-	}
+	std::cout << (true ? static_cast<unsigned int>(-1) : 2u );
 
 	return 0;
 }
