@@ -11,24 +11,23 @@ private:
 public:
 	Passport()
 		: monthsTillExpiry(10),
-		  name("Sebastian Perilla"),
-		  passportNumber("A1234567")
+		name("Sebastian Perilla"),
+		passportNumber("A1234567")
 	{
+		std::cout << "Constructor Called!!!\n";
 	}
 
-	void passGetter()
-	{
+	void passGetter() {
 		std::cout << "Months Till Expiry: " << monthsTillExpiry << "\n";
 
-		std::string_view name1{name};
+		std::string_view name1{ name };
 		std::cout << "Name: " << name1 << "\n";
 
 		std::string_view passportNumber1(passportNumber);
 		std::cout << "Number: " << passportNumber1 << "\n";
 	}
 
-	void passNameSetter()
-	{
+	void passNameSetter() {
 		std::cout << "New Name: ";
 		std::string nameNew{};
 		std::getline(std::cin >> std::ws, nameNew);
@@ -41,8 +40,7 @@ public:
 	}
 };
 
-int main()
-{
+int main() {
 	Passport passport;
 
 	passport.passGetter();
@@ -52,14 +50,12 @@ int main()
 	std::string changePassQuestion{};
 	std::cin >> changePassQuestion;
 
-	if (changePassQuestion == "y")
-	{
+	if (changePassQuestion == "y") {
 		passport.passNameSetter();
 		std::cout << "\n";
 		passport.passGetter();
 	}
-	else
-	{
+	else {
 		std::cout << "All Goodie, you will be notified when the passport expiry is almost up!";
 	}
 
