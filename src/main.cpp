@@ -1,6 +1,8 @@
 #include <iostream>
 
 
+int globalOne = 1;
+
 void swap(int trueSmaller, int trueLarger)
 {
 	std::cout << "The smaller value is " << trueSmaller;
@@ -32,6 +34,8 @@ int main()
 		std::cout << "\nThe larger value is " << larger;
 
 	}
+
+	std::cout << "\nPrinting Global One, EOF: " << globalOne;
 
 	return 0;
 }
