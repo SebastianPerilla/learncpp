@@ -1,66 +1,26 @@
 #include <iostream>
-
-
-int globalOne = 1;
-
-void swap(int trueSmaller, int trueLarger)
-{
-	std::cout << "The smaller value is " << trueSmaller;
-	std::cout << "\nThe larger value is " << trueLarger;
-}
-
-int enterNum()
-{
-	int num{};
-	std::cin >> num;
-
-	return num;
-}
+#include <iostream>
 
 int main()
-{
-	std::cout << "Enter an integer: ";
-	int smaller{ enterNum() };
+{ // outer block
+    int apples { 5 }; // here's the outer block apples
 
-	std::cout << "Enter a larger integer: ";
-	int larger{ enterNum() };
+    { // nested block
+        // apples refers to outer block apples here
+        std::cout << apples << '\n'; // print value of outer block apples
 
-	if (smaller > larger) {
-		std::cout << "Swapping values\n";
-		swap(larger, smaller);
-	}
-	else {
-		std::cout << "The smaller value is " << smaller;
-		std::cout << "\nThe larger value is " << larger;
+        int innerApples{ 0 }; // define apples in the scope of the nested block
 
-	}
+        // apples now refers to the nested block apples
+        // the outer block apples is temporarily hidden
 
-	std::cout << "\nPrinting Global One, EOF: " << globalOne;
+        innerApples = 10; // this assigns value 10 to nested block apples, not outer block apples
 
-	return 0;
-}
+        std::cout << innerApples << '\n'; // print value of nested block apples
+    } // nested block apples destroyed
 
 
-/*
-	The difference between a variables:
-	- Scope: The block of code where a 
-	         variable is accessible from.
-	- Duration: The duration defines the rules that govern
-				when a variable is created and destroyed 
-	- Lifetime: The point of instantiation to the end of the
-				scope where it is destroyed.
+    std::cout << apples << '\n'; // prints value of outer block apples
 
-
-	By default what kind of scope 
-	and duration do local variables have
-	(and what do those mean)? 
-
-		By default they have block scope, which means they can
-		can be accessed from their point of definition to the 
-		end of the block they are defined within.
-		
-		They also have automatic duration whic means they are 
-		created at the point of definition, and are destroyed 
-		at the end of the block in which they are defined.
-
-*/
+    return 0;
+} // outer block apples destroyed
