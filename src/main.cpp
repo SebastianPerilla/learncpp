@@ -1,18 +1,17 @@
+#include "constants.h"
 #include <iostream>
 
 int main()
 {
-    std::cout << "Enter a positive number: ";
-    int num{};
-    std::cin >> num;
+	std::cout << "How many students are in your class? ";
+	int students{};
+	std::cin >> students;
 
 
-    if (num < 0) {
-        std::cout << "Negative number entered.  Making positive.\n";
-        num = -num;
-    }
+	if (students > Constants::maxClassSize)
+		std::cout << "There are too many students in this class";
+	else
+		std::cout << "This class isn't too large";
 
-    std::cout << "You entered: " << num;
-
-    return 0;
+	return 0;
 }
