@@ -2,17 +2,25 @@
 
 int main()
 {
-  int lineCount{5};
-  
-  while (lineCount >= 1) {
-    
-    int count {lineCount};
-    while (count >= 1) {
-      std::cout << count-- << " ";
-    }
-    --lineCount;
-    std::cout << "\n";
-  }
+  int outer{ 1 };
+	while (outer <= 5)
+	{
+		int inner{ 5 };
+		while (inner >= 1)
+		{
+      if (inner <= outer) 
+      {
+        std::cout << inner << ' ';
+      }
+      else 
+      {
+				std::cout << "  ";
+      }
+      --inner;
+		}
+    std::cout << '\n';
+		++outer;
+	}
 
-  return 0;
+	return 0;
 }
