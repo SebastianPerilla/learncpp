@@ -2,11 +2,16 @@
 
 int main()
 {
-  char letter{ 'a' };
-
-  while (letter <= 'z') {
-    std::cout << letter << " " << static_cast<int>(letter) << "\n";
-    ++letter;
+  int lineCount{5};
+  
+  while (lineCount >= 1) {
+    
+    int count {lineCount};
+    while (count >= 1) {
+      std::cout << count-- << " ";
+    }
+    --lineCount;
+    std::cout << "\n";
   }
 
   return 0;
