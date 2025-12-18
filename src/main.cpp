@@ -2,25 +2,24 @@
 
 int main()
 {
-  int outer{ 1 };
-	while (outer <= 5)
-	{
-		int inner{ 5 };
-		while (inner >= 1)
-		{
-      if (inner <= outer) 
-      {
-        std::cout << inner << ' ';
-      }
-      else 
-      {
-				std::cout << "  ";
-      }
-      --inner;
-		}
-    std::cout << '\n';
-		++outer;
-	}
+    // selection must be declared outside of the do-while-loop, so we can use it later
+    int selection {};
 
-	return 0;
+    do
+    {
+        std::cout << "Please make a selection: \n";
+        std::cout << "1) Addition\n";
+        std::cout << "2) Subtraction\n";
+        std::cout << "3) Multiplication\n";
+        std::cout << "4) Division\n";
+        std::cin >> selection;
+    }
+    while (selection < 1 || selection > 4);
+
+    // do something with selection here
+    // such as a switch statement
+
+    std::cout << "You selected option #" << selection << '\n';
+
+    return 0;
 }
