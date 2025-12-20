@@ -1,33 +1,19 @@
+/* 
+Write a program that converts from miles to kilometers 
+1 mile = 1.609 kilometers
+*/
+
 #include <iostream>
 
-void fizzbuzz(int count){
-  for (int i{ 1 }; i <= count; ++i)
-	{
-		bool printed{ false };
-		if (i % 3 == 0)
-		{
-			std::cout << "fizz";
-			printed = true;
-		}
-		if (i % 5 == 0)
-		{
-			std::cout << "buzz";
-			printed = true;
-		}
-		if (i % 7 == 0)
-		{
-			std::cout << "pop";
-			printed = true;
-		}
-
-		if (!printed)
-			std::cout << i;
-
-		std::cout << '\n';
-  }
+double milesToKilo(int amount){
+  double kilometers{1.609};
+  return amount * kilometers;
 }
 
 int main() {
-  fizzbuzz(150);
+  std::cout << "Enter a number of miles: ";
+  int x{};
+  std::cin >> x;
+  std::cout << milesToKilo(x) << " is the equivalent in kilometeres."<< "\n"; 
   return 0;
 }
