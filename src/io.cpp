@@ -1,16 +1,16 @@
-#include <iostream>
 #include "io.h"
+#include <iostream>
 
-// namespace io {
-//     int readNumber() {
-//         std::cout << "Please Enter an integer: ";
-//         int x;
-//         std::cin >> x;
-//         return x;
-//     }
+namespace Card
+{
+    int age;
+    void print() { std::cout << age; };
+}
 
-//     void writeAnswer(int answer){
-//         std::cout << "The Answer is: " << answer << '\n';
-//     }
 
+// int main() {
+//     Card::Sebas sebas;
+//     sebas.setInfo("Sebas", 22);
+//     sebas.getInfo();
+//     return 0;
 // }

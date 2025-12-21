@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include "passport.h"
 
 class Passport
 {
