@@ -1,21 +1,27 @@
 #include <iostream>
 
+int breakOrReturn()
+{
+    while (true) // infinite loop
+    {
+        std::cout << "Enter 'b' to break or 'r' to return: ";
+        char ch{};
+        std::cin >> ch;
+
+        if (ch == 'b')
+            break;         
+        if (ch == 'r')
+            return 1;
+        std::cout << "Ending breakOrReturn\n";
+    }
+    std::cout << "We broke out of the loop\n";
+
+    return 0;
+};
+
+
 int main(){
-  for(int i{0}; i <= 20; i+=2){
-    std::cout << i << " ";
-  }
+  int returnValue {breakOrReturn()};
+  std::cout << "Function breakOrReturn Returned " << returnValue << "\n";
   return 0;
 }
-
-/*
-
-lets think of the compilation process, we share the header files so know what is where,
-then we link up the things at the top of the files
-so normally we have functions defined as a "forward delcaration"
-then we replace that part of the function with its implementation,
-
-So if we have a header file with a full class and its variables that is what is necessary to know if a function has any member functions???
-
-so given that assumption, we should define everything inside the header file for the classes
-
-*/
