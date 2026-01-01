@@ -2,7 +2,7 @@
 
 int main()
 {
-  std::cout << "New Year Commit!\n";
+  std::cout << "New New Year Commit!\n";
 
 	return 0;
 }
