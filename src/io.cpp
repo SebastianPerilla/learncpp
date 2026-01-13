@@ -1,16 +1,7 @@
 #include "io.h"
 #include <iostream>
+#include <string>
 
-namespace Card
-{
-    int age;
-    void print() { std::cout << age; };
-}
-
-
-// int main() {
-//     Card::Sebas sebas;
-//     sebas.setInfo("Sebas", 22);
-//     sebas.getInfo();
-//     return 0;
-// }
+namespace Card {
+  void Sebas::print(std::string name) { std::cout << name << "\n"; };
+} // namespace Card
