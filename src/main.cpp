@@ -1,16 +1,22 @@
 #include <iostream>
-#include <random>
+#include <random> // for std::mt19937 and std::uniform_int_distribution
 
 int main() {
-    std::cout << "LearnC++ Practice: \n";
+    std::mt19937 mt {};
 
-    std::mt19937 mt{};
+    // Create a reusable random number generator that generates uniform
+    // numbers between 1 and 6
+    std::uniform_int_distribution die6 {
+        1, 6
+    }; // for C++14, use std::uniform_int_distribution<> die6{ 1, 6 };
 
-    for (int count{1}; count <= 40; ++count) {
-        std::cout << mt() << "/t";
+    // Print a bunch of random numbers
+    for (int count { 1 }; count <= 40; ++count) {
+        std::cout << die6(mt) << '\t'; // generate a roll of the die here
 
-        if (count % 5 == 0) {
-            std::cout << "\n";
+        // If we've printed 10 numbers, start a new row
+        if (count % 10 == 0) {
+            std::cout << '\n';
         }
     }
 

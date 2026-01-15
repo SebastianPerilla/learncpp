@@ -98,7 +98,7 @@ CommentPragmas:  '^ IWYU pragma:'
 CompactNamespaces: false
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
-Cpp11BracedListStyle: true
+Cpp11BracedListStyle: false
 DerivePointerAlignment: false
 DisableFormat:   false
 EmptyLineAfterAccessModifier: Never
@@ -136,7 +136,7 @@ IndentPPDirectives: None
 IndentRequiresClause: true
 IndentWidth:     4
 IndentWrappedFunctionNames: false
-InsertBraces:    false
+InsertBraces:    true
 InsertNewlineAtEOF: false
 InsertTrailingCommas: None
 IntegerLiteralSeparator:
@@ -195,7 +195,7 @@ SpaceAfterTemplateKeyword: true
 SpaceAroundPointerQualifiers: Default
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeCaseColon: false
-SpaceBeforeCpp11BracedList: false
+SpaceBeforeCpp11BracedList: true
 SpaceBeforeCtorInitializerColon: true
 SpaceBeforeInheritanceColon: true
 SpaceBeforeJsonColon: false
@@ -220,7 +220,7 @@ SpacesInContainerLiterals: true
 SpacesInLineCommentPrefix:
   Minimum:         1
   Maximum:         -1
-SpacesInParens:  Never
+SpacesInParens: Never 
 SpacesInParensOptions:
   InCStyleCasts:   false
   InConditionalStatements: false
