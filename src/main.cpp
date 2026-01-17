@@ -1,52 +1,63 @@
-// Make sure that assert triggers even if we compile in release mode
-#include <cmath>
-#undef NDEBUG
 
-#include <cassert> // for assert
+// #include <chrono>
 #include <iostream>
+#include <random>
 
-bool isPrime(int x) {
+int pickRandNum() {
+    std::random_device rd {};
+    // std::seed_seq ss { static_cast<std::seed_seq::result_type>(
+    //     std::chrono::steady_clock::now().time_since_epoch().count()) };
+    std::mt19937 mt { rd() };
+    std::uniform_int_distribution num { 1, 100 };
+    return num(mt);
+}
 
-    if (x <= 1) {
-        return false;
+void game(int trueNum) {
+
+    int turn { 1 };
+
+    while (turn < 7) {
+        std::cout << "Guess #" << turn << ": ";
+        int guess {};
+        std::cin >> guess;
+
+        if (guess == trueNum) {
+            std::cout << "Correct!";
+            break;
+        }
+
+        if (guess > trueNum) {
+            std::cout << "Your guess is too high.\n";
+            ++turn;
+        } else if (guess < trueNum) {
+            std::cout << "Your guess is too low.\n";
+            ++turn;
+        }
     }
+}
 
-    if (x == 2) {
-        return true;
-    }
-    if (x % 2 == 0) {
-        return false;
-    }
+bool playAgain() {
+    while (true) {
+        std::cout << "\nWould you like to play again (y/n)? ";
+        char choice {};
+        std::cin >> choice;
 
-    for (int count { 3 }; count * count <= x; count += 2) {
-        if (x % count == 0) {
+        switch (choice) {
+        case 'y':
+            return true;
+        case 'n':
             return false;
         }
     }
-
-    return true;
-};
+}
 
 int main() {
-    assert(!isPrime(0)); // terminate program if isPrime(0) is true
-    assert(!isPrime(1));
-    assert(isPrime(2)); // terminate program if isPrime(2) is false
-    assert(isPrime(3));
-    assert(!isPrime(4));
-    assert(isPrime(5));
-    assert(isPrime(7));
-    assert(!isPrime(9));
-    assert(isPrime(11));
-    assert(isPrime(13));
-    assert(!isPrime(15));
-    assert(!isPrime(16));
-    assert(isPrime(17));
-    assert(isPrime(19));
-    assert(isPrime(97));
-    assert(!isPrime(99));
-    assert(isPrime(13417));
+    std::cout
+        << "Let's play a game. I'm thinking of a number between 1 and 100. You have 7 tries to guess what it is.\n";
+    do {
+        game(pickRandNum());
+    } while (playAgain());
 
-    std::cout << "Success!\n";
-
+    std::cout << "Thank you for playing!\n";
     return 0;
 }
