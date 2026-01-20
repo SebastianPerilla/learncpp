@@ -1,12 +1,10 @@
 #include <iostream>
+#include <string>
 
 int main() {
-    std::cout << "Trying Lambdas\n";
-    auto firstLambda = []() {
-        for (int i { 0 }; i < 10; ++i) {
-            std::cout << "Printing: " << i << "\n";
-        }
-    };
-    firstLambda();
+    std::cout << "Testing\n";
+    std::string getAttempt;
+    std::getline(std::cin >> std::ws, getAttempt);
+    std::cout << getAttempt << "\n";
     return 0;
 }
