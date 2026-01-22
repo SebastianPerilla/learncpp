@@ -1,10 +1,8 @@
+#include <cassert>
 #include <iostream>
-#include <string>
 
 int main() {
-    std::cout << "Testing\n";
-    std::string getAttempt;
-    std::getline(std::cin >> std::ws, getAttempt);
-    std::cout << getAttempt << "\n";
+    int gravity { 10 };
+    assert(gravity < 9);
     return 0;
 }
