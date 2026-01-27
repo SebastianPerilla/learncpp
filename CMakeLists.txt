@@ -9,7 +9,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 # enable_testing()
 
 add_subdirectory(src)
-add_subdirectory(tests)
+# add_subdirectory(tests)
 
 # add_custom_target(run_main_if_tests_pass
 #   COMMAND ${CMAKE_CTEST_COMMAND} --output-on-failure

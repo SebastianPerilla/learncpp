@@ -1,12 +1,11 @@
 #pragma once
-#include<iostream>
 
-namespace Card
-{
+namespace Card {
     class Sebas {
-    private:
-        int age;
-    public:
-        void print();
+        private:
+            int age;
+
+        public:
+            void print();
     };
-}
+} // namespace Card

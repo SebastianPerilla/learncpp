@@ -1,7 +1,7 @@
 # library
-add_library(io SHARED io.cpp)
-target_include_directories(io PUBLIC ${CMAKE_SOURCE_DIR}/include)
+add_library(passport SHARED passport.cpp)
+target_include_directories(passport PUBLIC ${CMAKE_SOURCE_DIR}/include)
 
 # executable
 add_executable(main main.cpp)
-target_link_libraries(main PUBLIC io)
+target_link_libraries(main PUBLIC passport)

@@ -1,3 +1,0 @@
-# .clangd
-CompileFlags:
-  Add: [-std=c++17]
