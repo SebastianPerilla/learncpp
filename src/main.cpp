@@ -1,21 +1,11 @@
 #include <iostream>
 
-namespace constants {
-    constexpr double pi { 3.14159 };
-}
+int func(int value, int value1) { return value * value1; }
 
-using Degrees = double;
-using Radians = double;
-
-Radians convertToRadians(Degrees degrees) { return degrees * constants::pi / 180; }
+int func(double value, double value1) { return value * value1; }
 
 int main() {
-    std::cout << "Enter a number of degrees: ";
-    Degrees degrees {};
-    std::cin >> degrees;
-
-    Radians radians { convertToRadians(degrees) };
-    std::cout << degrees << " degrees is " << radians << " radians.\n";
-
+    // std::cout << func(1) << "\n";
+    std::cout << func(1, 5);
     return 0;
 }
