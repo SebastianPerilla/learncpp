@@ -11,11 +11,11 @@ int main() {
     y = 3;
 
     std::cout << x << ref << '\n';
-
     x = 4;
 
-    std::cout << x << ref << '\n';
+    std::cout <<
 
+        x << ref << '\n';
     return 0;
 }
 
