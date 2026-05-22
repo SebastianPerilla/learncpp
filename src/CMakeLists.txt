@@ -1,7 +1,7 @@
-# library
-add_library(passport SHARED passport.cpp)
-target_include_directories(passport PUBLIC ${CMAKE_SOURCE_DIR}/include)
+cmake_minimum_required(VERSION 3.23)
+project(MyProject)
 
-# executable
-add_executable(main main.cpp)
-target_link_libraries(main PUBLIC passport)
+add_executable(MyProgram)
+
+target_sources(MyProgram PRIVATE tutorial.cpp BASE_DIRS include FILES
+                                 include/combo.h)
